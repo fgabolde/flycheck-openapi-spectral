@@ -7,7 +7,8 @@
 
 See `https://github.com/stoplightio/spectral'."
   :command ("spectral" "lint" "-f" "text" (config-file "--ruleset" flycheck-openapi-spectralyml) source)
-  :error-patterns ((warning line-start (file-name) ":" line ":" column " warning " (id (one-or-more (not blank))) " " (message))
+  :error-patterns ((info line-start (file-name) ":" line ":" column " information " (id (one-or-more (not blank))) " " (message))
+                   (warning line-start (file-name) ":" line ":" column " warning " (id (one-or-more (not blank))) " " (message))
                    (error line-start (file-name) ":" line ":" column " error " (id (one-or-more (not blank))) " " (message)))
   :modes yaml-mode
   :predicate (lambda ()
